@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="plugins/build/js/countrySelect.js"></script>
+      <script src="js/jquery.inputmask.js"></script>
+      <link rel="stylesheet" href="css/jquery-ui.min.css">
+      <link rel="stylesheet" href="rappers.css">
+      <link rel="stylesheet" href="plugins/build/css/countrySelect.css">
+      <script>
+     $( function() {
+       $("#country").countrySelect({
+        //defaultCountry: "jp",
+        //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+        preferredCountries: ['ca', 'gb', 'us']
+      });
+      $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+      $("#telephone").inputmask({"mask": "+7 999-999-99-99"});
+    });
+    var filesExt = ['jpg', 'gif', 'png'];
+      $('input[type=file]').change(function(){
+      var parts = $(this).val().split('.');
+        if(filesExt.join().search(parts[parts.length - 1]) != -1){
+          alert('Good!');
+        } else {
+          alert('WTF?!');
+        }
+    });
+  </script>
+</head>
+<body>
+    <div class="header">
+      <div class="name_site"><span class="contents">My Favorite Rappers</span></div>
+        <div class="input_field">
+      <input type="text" name="search">
+    </div>
+  </div>
+  <fieldset>
+    <form>
+    <div class="
+row_for_elements"><label for="name_field" class='required'>Имя</label><input type="text" name="name" id="name_field" required/></div>
+    <div class="
+row_for_elements"><label for="middle_name_field">Middlename(Среднее имя)</label><input type="text" name="middle_name" id="middle_name_field"></div>
+    <div class="
+row_for_elements"><label for="surname_field" class='required'>Фамилия</label> <input type="text" name="surname_name" id="surname_field" required/></div>
+    <div class="
+row_for_elements"><label for="patronymic_field">Отчество</label><input type="text" name="patronymic_name" id="patronymic_field"></div>
+    <div class="
+row_for_elements"><label for="email_field" class='required'>Email</label><input type="text" name="email_name" id="email_field" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" required/></div>
+    <div class="
+row_for_elements"><label for="password_field" class='required'>Пароль</label><input type="password" name="password_name" id="password_field" required/></div>
+    <div class="
+row_for_elements"><label for="datepicker" class='required'>Дата Рождения</label><input type="text" id="datepicker" name="datepicker_name" required/></div>
+    <div class="
+row_for_elements"><label for="about_me">О себе</label><textarea id="about_me" name="about_me_name" rows="6" cols="40"></textarea></div>
+    <div class="
+row_for_elements photo_row"><label for="foto_field">Фото</label><input style="display:none" id="input-image-hidden" onchange="document.getElementById('image-preview').src = window.URL.createObjectURL(this.files[0])" type="file" accept="image/jpeg, image/png">
+<button  onclick="HandleBrowseClick('input-image-hidden');">Загрузить фото</button><img id="image-preview"  style="height:120px; width:120px;"  src="" ><script type="text/javascript">
+function HandleBrowseClick(hidden_input_image)
+{
+    var fileinputElement = document.getElementById(hidden_input_image);
+    fileinputElement.click();
+}     
+</script>
+</div>
+    <div class="
+row_for_elements"><label for="country">Страна</label><div class="country_field"><input type="text" id="country"></div></div>
+    <div class="
+row_for_elements"><label for="telephone" class='required'>Телефон</label> <input type="tel" name="telephone_field" id="telephone" required/></div>
+    <div class="
+row_for_elements"><p  class='required'>Пол</p>
+    <label for="male_field">
+        <input type="radio" name="gender_field" value="male" id="male_field">
+        Мужской
+    </label>
+    <label for="female_field">
+        <input type="radio" name="gender_field" value="female" id="female_field">
+        Женский
+    </label></div>
+    <div class="
+row_for_elements"><p>Подписка на рассылку</p>
+    <label><input type="checkbox" name="reklama_field"> Реклама</label>
+      <label><input type="checkbox" name="news_field"> Новости</label>
+      <label><input type="checkbox" name="update_field"> Обновления</label></div>
+     <div class="
+row_for_elements button_field"> <label>
+        <button class="btnblue">Отправить</button>
+      </label></div>
+    </form>
+  </fieldset>
+      </body>
+</html>

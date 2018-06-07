@@ -564,9 +564,61 @@ h4 {
 
 }
 
+fieldset {
+	display: flex;
+	max-width: 600px;
+	margin: 10px auto;
+	justify-content: flex-start;
+	min-height: 800px;
+}
+
+fieldset input  {
+	box-sizing: border-box;
+	padding: 5px 10px;
+	margin-left: 25px;
+	outline: none;
+	border: none;
+	-webkit-border-radius: 14px;
+	font-size: 15px;
+}
+
+div p.required:after , label.required:after
+{
+    color: red;
+    content: " *";
+}
+
+.country_field {
+	margin-left: 15px;
+}
+
+.row_for_elements {
+	display: flex;
+	margin-top: 20px;
+	font-size: 16px;
+	align-items: center;
+}
+
+.row_for_elements textarea {
+	margin-left: 15px;
+	font-size: 14px;
+	padding: 5px;
+}
+
+.row_for_elements button {
+	-webkit-border-radius: 14px;
+	height: 30px;
+}
+
+.button_field {
+	justify-content: center;
+}
+.photo_row button, .photo_row img {
+	margin-left: 15px;
+}
 
 
-
+ 
 
 
 
